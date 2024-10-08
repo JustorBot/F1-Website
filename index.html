@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Motorsport Passions | Home</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- React and ReactDOM via CDN -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <!-- Babel to enable JSX support -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <!-- This div is where React will render the app -->
+    <div id="root"></div>
+
+    <!-- React script -->
+    <script type="text/babel">
+
+        // Define the components
+
+        const Navbar = () => (
+            <header>
+                <nav className="navbar">
+                    <div className="logo">
+                        <a href="index.html"><h1>Motorsport Passions</h1></a>
+                    </div>
+                    <ul className="nav-links">
+                        <li><a href="/pages/calander.html">Calendar</a></li>
+                        <li><a href="/pages/drivers.html">Drivers</a></li>
+                        <li><a href="/pages/teams.html">Teams</a></li>
+                        <li><a href="/pages/chat.html">Chat</a></li>
+                        <li><a href="/pages/subscription.html">Subscription</a></li>
+                        <li><a href="/pages/about.html">About</a></li>
+                    </ul>
+                </nav>
+            </header>
+        );
+
+        const HeroSection = () => (
+            <section className="hero-section" id="home">
+                <div className="hero-content">
+                    <h2>Feel the Speed!</h2>
+                    <p>Experience the thrill of Racing. Catch up with the latest news, track your favorite drivers, and never miss a race!</p>
+                    <a href="/pages/about.html" className="cta-button">Discover More</a>
+                </div>
+            </section>
+        );
+
+        const Footer = () => (
+            <footer>
+                <div className="footer-content">
+                    <p>&copy; 2024 Motorsport Passions. All Rights Reserved.</p>
+                    <ul className="footer-links">
+                        <li><a href="/pages/extras/privacypolicy.html">Privacy Policy</a></li>
+                        <li><a href="/pages/extras/terms.html">Terms of Use</a></li>
+                        <li><a href="/pages/extras/contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </footer>
+        );
+
+        // App Component to combine everything
+        const App = () => (
+            <div>
+                <Navbar />
+                <HeroSection />
+                <Footer />
+            </div>
+        );
+
+        // Render the App component to the root element
+        ReactDOM.render(<App />, document.getElementById('root'));
+
+    </script>
+</body>
+</html>
