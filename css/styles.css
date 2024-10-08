@@ -25,7 +25,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #1f1f1f;
+    background-color: #161616;
 }
 
 .logo h1 {
@@ -111,7 +111,7 @@ body {
 
 /* Footer */
 footer {
-    background-color: #1f1f1f;
+    background-color: #161616;
     padding: 10px 0;
     text-align: center;
     height: 100px;
@@ -142,3 +142,40 @@ footer {
 .footer-links a:hover {
     color: #ff1e00;
 }
+
+/* About Section */
+#about {
+    padding: 60px 20px;
+    background-color: #1f1f1f;
+    color: #ffffff;
+    text-align: center;
+    height: calc(100vh - 130px); /* Ensure the page doesn't scroll */
+}
+
+.about-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.about-content {
+    max-width: 800px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.about-content h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #ff1e00;
+    text-transform: uppercase;
+}
+
+.about-content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
