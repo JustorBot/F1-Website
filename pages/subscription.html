@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Subscription | Motorsport Passions</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- React and ReactDOM via CDN -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        // Subscription Page Navbar
+        const Navbar = () => (
+            <header>
+                <nav className="navbar">
+                    <div className="logo">
+                        <a href="../index.html"><h1>Motorsport Passions</h1></a>
+                    </div>
+                    <ul className="nav-links">
+                        <li><a href="calander.html">Calander</a></li>
+                        <li><a href="drivers.html">Drivers</a></li>
+                        <li><a href="teams.html">Teams</a></li>
+                        <li><a href="chat.html">Chat</a></li>
+                        <li><a href="subscription.html">Subscription</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </nav>
+            </header>
+        );
+
+        // Newsletter Form Component
+        const NewsletterForm = () => (
+            <div className="newsletter">
+                <h2>Subscribe to Our Newsletter</h2>
+                <p>Stay up to date with the latest motorsport news, updates, and exclusive content!</p>
+                <form>
+                    <input type="email" placeholder="Enter your email" required />
+                    <button type="submit" className="cta-button">Subscribe</button>
+                </form>
+            </div>
+        );
+
+        // Subscription Tiers Component
+        const SubscriptionTiers = () => (
+            <div className="tiers">
+                <h2>Choose Your Plan</h2>
+                <div className="tier-cards">
+                    <div className="tiers">
+                        <div className="tier-cards">
+                            <div className="tier">
+                                <h3>Free Plan</h3>
+                                <p>$0 / month</p>
+                                <ul>
+                                    <li>Ads</li>
+                                    <li>Access to basic news</li>
+                                    <li>Track up to 3 drivers</li>
+                                    <li>Email notifications</li>
+                                    <li>Normal support</li>
+                                </ul>
+                                <button>Choose Free</button>
+                            </div>
+
+                            <div className="tier">
+                                <h3>Paid Plan</h3>
+                                <p>$5 / month</p>
+                                <ul>
+                                    <li>No Ads</li>
+                                    <li>Access to premium news</li>
+                                    <li>Track unlimited drivers</li>
+                                    <li>Exclusive content</li>
+                                    <li>Priority support</li>
+                                </ul>
+                                <button>Choose Paid</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {/* New table for differences */}
+                <div className="plan-comparison">
+                    <h2>Plan Comparison</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>Free Plan</th>
+                                <th>Paid Plan</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Price</td>
+                                <td>$0</td>
+                                <td>$5/month</td>
+                            </tr>
+                            <tr>
+                                <td>Adverts</td>
+                                <td>Yes</td>
+                                <td>No</td>
+                            </tr>
+                            <tr>
+                                <td>Access to News</td>
+                                <td>Basic News</td>
+                                <td>Premium News</td>
+                            </tr>
+                            <tr>
+                                <td>Driver Tracking</td>
+                                <td>Up to 3 Drivers</td>
+                                <td>Unlimited Drivers</td>
+                            </tr>
+                            <tr>
+                                <td>Exclusive Content</td>
+                                <td>No</td>
+                                <td>Yes</td>
+                            </tr>
+                            <tr>
+                                <td>Priority Support</td>
+                                <td>No</td>
+                                <td>Yes</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        );
+
+        // Footer Component
+        const Footer = () => (
+            <footer>
+                <div className="footer-content">
+                    <p>&copy; 2024 Motorsport Passions. All Rights Reserved.</p>
+                    <ul className="footer-links">
+                        <li><a href="../pages/extras/privacypolicy.html">Privacy Policy</a></li>
+                        <li><a href="../pages/extras/terms.html">Terms of Use</a></li>
+                        <li><a href="../pages/extras/contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </footer>
+        );
+
+        // Main Subscription Page App
+        const SubscriptionPage = () => (
+            <div>
+                <Navbar />
+                <section id="subscription" className="subscription-section">
+                    <NewsletterForm />
+                    <SubscriptionTiers />
+                </section>
+                <Footer />
+            </div>
+        );
+
+        // Render the Subscription Page
+        ReactDOM.render(<SubscriptionPage />, document.getElementById('root'));
+    </script>
+</body>
+</html>

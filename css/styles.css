@@ -1,3 +1,4 @@
+/* General styles remain the same */
 * {
     margin: 0;
     padding: 0;
@@ -9,14 +10,13 @@ html, body {
     font-family: 'Roboto', sans-serif;
     color: #ffffff;
     background-color: #0c0c0c;
+    overflow-y: auto; /* Allow scrolling on the body */
 }
 
-/* Make sure the page doesn't scroll */
-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    overflow: hidden; /* Prevents scrolling */
+/* For other pages, force the body to stop scrolling */
+.noscroll {
+    overflow: hidden;
+    height: 100vh;
 }
 
 /* Navigation Bar */
@@ -179,3 +179,165 @@ footer {
     line-height: 1.6;
 }
 
+/* Subscription Section */
+#subscription {
+    padding: 20px 20px;
+    background-color: #1f1f1f;
+    color: #ffffff;
+    text-align: center;
+    min-height: 100vh; /* Ensures the section takes up the full viewport height */
+    overflow-y: auto; /* Allow scrolling on the subscription section */
+}
+
+.subscription-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Newsletter Form */
+.newsletter {
+    margin-bottom: 20px;
+}
+
+.newsletter h2 {
+    font-size: 2.5rem;
+    color: #ff1e00;
+    margin-bottom: 20px;
+}
+
+.newsletter p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.newsletter form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.newsletter input[type="email"] {
+    padding: 10px;
+    width: 300px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+}
+
+.newsletter button {
+    padding: 10px 20px;
+    background-color: #ff1e00;
+    color: white;
+    border: none;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.newsletter button:hover {
+    background-color: #ffffff;
+    color: #ff1e00;
+}
+
+/* Subscription Tiers */
+.tiers h2 {
+    font-size: 2.5rem;
+    color: #ff1e00;
+    margin-bottom: 20px;
+}
+
+.tier-cards {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.tier {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 30px;
+    width: 300px;
+    border-radius: 10px;
+    text-align: left;
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack items vertically */
+    justify-content: space-between; /* Distribute space evenly */
+    height: 350px; /* Fixed height for consistent sizing */
+}
+
+.tier h3 {
+    font-size: 1.8rem;
+    color: #ff1e00;
+    margin-bottom: 20px;
+}
+
+.tier p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    flex-grow: 1; /* Allow the paragraph to grow and take available space */
+}
+
+.tier ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.tier ul li {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.tier button {
+    padding: 10px 20px;
+    background-color: #ff1e00;
+    color: white;
+    border: none;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    align-self: flex-end; /* Align button to the bottom */
+    width: 100%; /* Make button full width for uniformity */
+}
+
+.tier button:hover {
+    background-color: #ffffff;
+    color: #ff1e00;
+}
+
+/* Plan Comparison Table */
+.plan-comparison {
+    margin-top: 40px;
+    color: #ffffff;
+}
+
+.plan-comparison h2 {
+    font-size: 2.5rem;
+    color: #ff1e00;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    border: 1px solid #ffffff; /* White border for table cells */
+    padding: 12px; /* Padding for cells */
+    text-align: left; /* Align text to the left */
+}
+
+table th {
+    background-color: #2e2e2e; /* Dark background for header */
+    color: #ff1e00; /* Header text color */
+}
+
+table tr:hover {
+    background-color: rgba(232, 232, 232, 0.381); /* Highlight row on hover */
+}
