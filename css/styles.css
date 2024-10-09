@@ -419,3 +419,51 @@ table tr:hover {
     font-size: 14px;
     margin-top: 20px;
 }
+
+/* Calendar */
+#calendar {
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px; /* Rounded corners for calendar */
+    margin: 20px; /* Margin around the calendar */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    color: white; /* Default text color for calendar */
+}
+
+#calendar h2 {
+    font-size: xx-large; 
+    margin-bottom: 20px; 
+    text-align: center;
+}
+
+.series-list {
+    display: flex;
+    flex-wrap: wrap; /* Allows the bubbles to wrap onto the next line */
+    justify-content: center; /* Centers the bubbles horizontally */
+    gap: 20px; /* Adds space between the bubbles */
+}
+
+.series-item {
+    background-color: #ff1e00; /* Red background */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    padding: 50px;
+    width: 90%; /* Adjust width as needed */
+    transition: transform 0.3s; /* Smooth scaling on hover */
+    text-align: center; /* Center text in bubbles */
+    cursor: pointer; /* Pointer cursor on hover */
+    color: white; /* Text color inside series items */
+    font-size: x-large;
+}
+
+.series-item:hover {
+    transform: scale(1.05); /* Scale up bubble on hover */
+    background-color: #ffffff; /* Background changes to white on hover */
+    color: #ff1e00; /* Text color changes to red on hover */
+}
+
+.series-link {
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Bold text */
+    color: inherit; /* Ensure link takes color from parent */
+}
