@@ -15,14 +15,14 @@
 
     <script type="text/babel">
         const chatRoomsData = [
-            { id: 1, name: 'F1 Chat', link: '../pages/chat/f1-chat.html' },
-            { id: 2, name: 'Formula E Chat', link: '../pages/chat/formulaE-chat.html' },
-            { id: 3, name: 'MotoGP Chat', link: '../pages/chat/motogp-chat.html' },
-            { id: 4, name: 'WRC Chat', link: '../pages/chat/wrc-chat.html' },
-            { id: 5, name: 'IndyCar Chat', link: '../pages/chat/indycar-chat.html' },
-            { id: 6, name: 'NASCAR Chat', link: '../pages/chat/nascar-chat.html' },
-            { id: 7, name: 'Endurance Chat', link: '../pages/chat/endurance-chat.html' },
-            { id: 8, name: 'General Chat', link: 'chat.html' },
+            { id: 1, name: 'F1 Chat', link: 'f1-chat.html' },
+            { id: 2, name: 'Formula E Chat', link: 'formulaE-chat.html' },
+            { id: 3, name: 'MotoGP Chat', link: 'motogp-chat.html' },
+            { id: 4, name: 'WRC Chat', link: 'wrc-chat.html' },
+            { id: 5, name: 'IndyCar Chat', link: 'indycar-chat.html' },
+            { id: 6, name: 'NASCAR Chat', link: 'nascar-chat.html' },
+            { id: 7, name: 'Endurance Chat', link: 'endurance-chat.html' },
+            { id: 8, name: 'General Chat', link: '../chat.html' },
         ];
     
         const ChatPage = () => {
@@ -50,7 +50,7 @@
     
             return (
                 <div id="chat-page">
-                    <h2>Motorsport Chat Rooms</h2>
+                    <h2>Motorsport Chat Rooms - NASCAR</h2>
                     <div className="chat-rooms-list">
                         {chatRoomsData.map((room) => (
                             <div className="chat-room-item" key={room.id}>
@@ -60,7 +60,7 @@
                     </div>
     
                     <div className="general-chat">
-                        <h3>General Chat</h3>
+                        <h3>Nascar Chat</h3>
     
                         {/* Chat message display area */}
                         <div className="chat-messages">
@@ -95,15 +95,15 @@
             <header>
                 <nav className="navbar">
                     <div className="logo">
-                        <a href="../index.html"><h1>TrackSide</h1></a>
+                        <a href="../../index.html"><h1>TrackSide</h1></a>
                     </div>
                     <ul className="nav-links">
-                        <li><a href="calander.html">Calander</a></li>
-                        <li><a href="drivers.html">Drivers</a></li>
-                        <li><a href="teams.html">Teams</a></li>
-                        <li><a href="chat.html">Chat</a></li>
-                        <li><a href="subscription.html">Subscription</a></li>
-                        <li><a href="about.html">About</a></li>
+                        <li><a href="../../pages/calander.html">Calander</a></li>
+                        <li><a href="../../pages/drivers.html">Drivers</a></li>
+                        <li><a href="../../pages/teams.html">Teams</a></li>
+                        <li><a href="../../pages/chat.html">Chat</a></li>
+                        <li><a href="../../pages/subscription.html">Subscription</a></li>
+                        <li><a href="../../pages/about.html">About</a></li>
                     </ul>
                 </nav>
             </header>
@@ -114,9 +114,9 @@
                 <div className="footer-content">
                     <p>&copy; 2024 TrackSide. All Rights Reserved.</p>
                     <ul className="footer-links">
-                        <li><a href="../pages/extras/privacypolicy.html">Privacy Policy</a></li>
-                        <li><a href="../pages/extras/terms.html">Terms of Use</a></li>
-                        <li><a href="../pages/extras/contact.html">Contact Us</a></li>
+                        <li><a href="../../pages/extras/privacypolicy.html">Privacy Policy</a></li>
+                        <li><a href="../../pages/extras/terms.html">Terms of Use</a></li>
+                        <li><a href="../../pages/extras/contact.html">Contact Us</a></li>
                     </ul>
                 </div>
             </footer>
