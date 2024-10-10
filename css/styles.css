@@ -631,3 +631,109 @@ table tr:hover {
     margin-left: 10px;
     text-align: right;
 }
+
+/* Next race styling */
+.next-race {
+    background-color: #ffe81d;
+    border: 2px solid #6b0808;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    text-align: center;
+    max-width: 800px;
+}
+
+.next-race h2 {
+    font-size: 2.2rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.next-race p {
+    font-size: 1.2rem;
+    color: #333;
+    margin: 8px 0;
+}
+
+.next-race-image {
+    max-width: 100%;
+    height: auto;
+    margin-top: 15px;
+    border-radius: 8px;
+}
+
+/* Race cards styling */
+.race-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin: 40px auto;
+    max-width: 1200px;
+}
+
+.race-card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.race-card:hover {
+    transform: scale(1.05);
+}
+
+.race-card h3 {
+    font-size: 1.8rem;
+    color: #ff5722;
+    margin-bottom: 10px;
+}
+
+.track-image {
+    max-width: 100%;
+    height: auto;
+    margin: 10px 0;
+    border-radius: 8px;
+}
+
+.race-card p {
+    font-size: 1rem;
+    color: #333;
+}
+
+.upcoming-race {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #4caf50;
+}
+
+.done .upcoming-race {
+    display: none;
+}
+
+/* Top 3 Results */
+.top-3-results {
+    background-color: #f1f1f1;
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 8px;
+}
+
+.top-3-results h4 {
+    margin-bottom: 10px;
+    color: #1e1e1e;
+    font-size: 1.2rem;
+}
+
+.top-3-results ol {
+    padding-left: 20px;
+    color: #1e1e1e;
+}
+
+.top-3-results ol li {
+    margin-bottom: 5px;
+}

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>TrackSide | F1 Calendar</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">  
+        const f1Races = [
+            {
+                id: 1,
+                name: "Bahrain Grand Prix",
+                date: "March 3, 2024",
+                time: "16:00",
+                location: "Sakhir, Bahrain",
+                trackImage: "../../images/circuits/Bahrain_Circuit.avif",
+                status: "done",
+                top3: ["Max Verstappen", "Sergio Perez", "Carlos Sainz"]
+            },
+            {
+                id: 2,
+                name: "Saudi Arabian Grand Prix",
+                date: "March 17, 2024",
+                time: "18:00",
+                location: "Jeddah, Saudi Arabia",
+                trackImage: "../../images/circuits/Saudi_Arabia_Circuit.avif",
+                status: "done",
+                top3: ["Max Verstappen", "Sergio Perez", "Charles Leclerc"]
+            },
+            {
+                id: 3,
+                name: "Australian Grand Prix",
+                date: "March 24, 2024",
+                time: "05:00",
+                location: "Melbourne, Australia",
+                trackImage: "../../images/circuits/Australia_Circuit.avif",
+                status: "done",
+                top3: ["Max Verstappen", "Sergio Perez", "Charles Leclerc"]
+            },
+            {
+                id: 4,
+                name: "Japanese Grand Prix",
+                date: "April 7, 2024",
+                time: "06:00",
+                location: "Suzuka, Japan",
+                trackImage: "../../images/circuits/Japan_Circuit.avif",
+                status: "done",
+                top3: ["Carlos Sainz", "Charles Leclerc", "Lando Norris"]
+            },
+            {
+                id: 5,
+                name: "Chinese Grand Prix",
+                date: "April 21, 2024",
+                time: "09:00",
+                location: "Shanghai, China",
+                trackImage: "../../images/circuits/China_Circuit.png",
+                status: "done",
+                top3: ["Max Verstappen", "Sergio Perez", "Carlos Sainz"]
+            },
+            {
+                id: 6,
+                name: "USA Miami Grand Prix",
+                date: "May 19, 2024",
+                time: "15:30",
+                location: "Miami, USA",
+                trackImage: "../../images/circuits/Miami_Circuit.avif",
+                status: "done",
+                top3: ["Lando Norris", "Max Verstappen", "Charles Leclerc"]
+            },
+            {
+                id: 7,
+                name: "Emilia Romagna Grand Prix",
+                date: "May 19, 2024",
+                time: "15:30",
+                location: "Emilia Romagna, Italy",
+                trackImage: "../../images/circuits/Emilia_Romagna_Circuit.avif",
+                status: "done",
+                top3: ["Max Verstappen", "Lando Norris", "Charles Leclerc"]
+            },
+            {
+                id: 8,
+                name: "Monaco Grand Prix",
+                date: "May 26, 2024",
+                time: "14:00",
+                location: "Monte Carlo, Monaco",
+                trackImage: "../../images/circuits/Monoco_Circuit.avif",
+                status: "done",
+                top3: ["Charles Leclerc", "Oscasr Piastri", "Carlos Sainz"]
+            },
+            {
+                id: 9,
+                name: "Canadian Grand Prix",
+                date: "June 23, 2024",
+                time: "20:00",
+                location: "Montreal, Canada",
+                trackImage: "../../images/circuits/Canada_Circuit.avif",
+                status: "done",
+                top3: ["Max Verstappen", "Lando Norris", "George Russell"]
+            },
+            {
+                id: 10,
+                name: "Spanish Grand Prix",
+                date: "June 9, 2024",
+                time: "15:00",
+                location: "Barcelona, Spain",
+                trackImage: "../../images/circuits/Spain_Circuit.avif",
+                status: "done",
+                top3: ["Max Verstappen", "Lando Norris", "Lewis Hamilton"]
+            },
+            {
+                id: 11,
+                name: "Austrian Grand Prix",
+                date: "June 30, 2024",
+                time: "15:00",
+                location: "Spielberg, Austria",
+                trackImage: "../../images/circuits/Austria_Circuit.avif",
+                status: "done",
+                top3: ["George Russell", "Oscar Piastri", "Carlos Sainz"]
+            },
+            {
+                id: 12,
+                name: "United Kingdom Grand Prix",
+                date: "July 7, 2024",
+                time: "16:00",
+                location: "Silverstone, UK",
+                trackImage: "../../images/circuits/Great_Britain_Circuit.avif",
+                status: "done",
+                top3: ["Lewis Hamilton", "Max Verstappen", "Lando Norris"]
+            },
+            {
+                id: 13,
+                name: "Hungarian Grand Prix",
+                date: "July 21, 2024",
+                time: "15:00",
+                location: "Budapest, Hungary",
+                trackImage: "../../images/circuits/Hungary_Circuit.avif",
+                status: "done",
+                top3: ["Oscar Piastri", "Lando Norris", "Lews Hamilton"]
+            },
+            {
+                id: 14,
+                name: "Belgian Grand Prix",
+                date: "August 4, 2024",
+                time: "15:00",
+                location: "Spa, Belgium",
+                trackImage: "../../images/circuits/Belgium_Circuit.png",
+                status: "done",
+                top3: ["Leis Hamilton", "Oscar Piastri", "Charles Leclerc"]
+            },
+            {
+                id: 15,
+                name: "Netherlands Grand Prix",
+                date: "August 25, 2024",
+                time: "15:00",
+                location: "Zandvoort, Netherlands",
+                trackImage: "../../images/circuits/Netherlands_Circuit.avif",
+                status: "done",
+                top3: ["Land Norris", "Max Verstappen", "Charles Leclerc"]
+            },
+            {
+                id: 16,
+                name: "Italian Monza Grand Prix",
+                date: "September 1, 2024",
+                time: "15:00",
+                location: "Monza, Italy",
+                trackImage: "../../images/circuits/Italy_Circuit.avif",
+                status: "done",
+                top3: ["Charles Leclerc", "Oscar Piastri", "Lando Norris"]
+            },
+            {
+                id: 17,
+                name: "Azerbaijan Grand Prix",
+                date: "May 5, 2024",
+                time: "13:00",
+                location: "Baku, Azerbaijan",
+                trackImage: "../../images/circuits/Baku_Circuit.avif",
+                status: "done",
+                top3: ["Oscar Piastri", "Charles Leclerc", "George Russell"]
+            },
+            {
+                id: 18,
+                name: "Singapore Grand Prix",
+                date: "September 15, 2024",
+                time: "14:00",
+                location: "Singapore",
+                trackImage: "../../images/circuits/Singapore_Circuit.avif",
+                status: "done",
+                top3: ["Land Norris", "Max Verstappen", "Oscar Piastri"]
+            },
+            {
+                id: 19,
+                name: "United States Grand Prix",
+                date: "October 20, 2024",
+                time: "20:00",
+                location: "Austin, USA",
+                trackImage: "../../images/circuits/USA_Circuit.avif",
+                status: "upcoming"
+            },
+            {
+                id: 20,
+                name: "Mexico City Grand Prix",
+                date: "October 27, 2024",
+                time: "21:00",
+                location: "Mexico City, Mexico",
+                trackImage: "../../images/circuits/Mexico_Circuit.avif",
+                status: "upcoming"
+            },
+            {
+                id: 21,
+                name: "Brazilian Grand Prix",
+                date: "November 10, 2024",
+                time: "19:00",
+                location: "Sao Paulo, Brazil",
+                trackImage: "../../images/circuits/Brazil_Circuit.png",
+                status: "upcoming"
+            },
+            {
+                id: 22,
+                name: "Las Vegas Grand Prix",
+                date: "November 23, 2024",
+                time: "21:00",
+                location: "Las Vegas, USA",
+                trackImage: "../../images/circuits/Las_Vegas_Circuit.avif",
+                status: "upcoming"
+            },
+            {
+                id: 23,
+                name: "Qatar Lusail Grand Prix",
+                date: "September 29, 2024",
+                time: "17:00",
+                location: "Lusail, Qatar",
+                trackImage: "../../images/circuits/Qatar_Circuit.avif",
+                status: "upcoming"
+            },
+            {
+                id: 24,
+                name: "Abu Dhabi Grand Prix",
+                date: "December 1, 2024",
+                time: "18:00",
+                location: "Yas Marina, Abu Dhabi",
+                trackImage: "../../images/circuits/Abu_Dhabi_Circuit.avif",
+                status: "upcoming"
+            }
+        ];
+
+        // Component to display top 3 results for completed races
+        const Top3Results = ({ top3 }) => (
+            <div className="top-3-results">
+                <h4>Top 3 Finishers</h4>
+                <ol>
+                    {top3.map((driver, index) => (
+                        <li key={index}>{driver}</li>
+                    ))}
+                </ol>
+            </div>
+        );
+
+        // Component to display individual race details
+        const RaceCard = ({ race }) => (
+            <div className={`race-card ${race.status}`}>
+                <h3>{race.name}</h3>
+                <img src={race.trackImage} alt={`${race.name} track`} className="track-image"/>
+                <p><strong>Date:</strong> {race.date}</p>
+                <p><strong>Time:</strong> {race.time}</p>
+                <p><strong>Location:</strong> {race.location}</p>
+                
+                {race.status === "done" ? (
+                    <Top3Results top3={race.top3} />
+                ) : (
+                    <p className="upcoming-race">Upcoming Race</p>
+                )}
+            </div>
+        );
+
+        // Component to display the next race at the top
+        const NextRace = ({ race }) => (
+            <div className="next-race">
+                <h2>Next Race: {race.name}</h2>
+                <p><strong>Date:</strong> {race.date}</p>
+                <p><strong>Time:</strong> {race.time}</p>
+                <p><strong>Location:</strong> {race.location}</p>
+                <img src={race.trackImage} alt={`${race.name} track`} className="next-race-image"/>
+            </div>
+        );
+
+        // Component for the F1 Calendar page
+        const CalendarPage = () => {
+            // Find the next upcoming race
+            const nextRace = f1Races.find(race => race.status === "upcoming");
+
+            return (
+                <div id="f1-calendar-page">
+                    {/* Next race section */}
+                    {nextRace && <NextRace race={nextRace} />}
+                    
+                    {/* All race blocks */}
+                    <div className="race-list">
+                        {f1Races.map((race) => (
+                            <RaceCard key={race.id} race={race} />
+                        ))}
+                    </div>
+                </div>
+            );
+        };
+
+        // Navbar Component
+        const Navbar = () => (
+            <header>
+                <nav className="navbar">
+                    <div className="logo">
+                        <a href="../index.html"><h1>TrackSide</h1></a>
+                    </div>
+                    <ul className="nav-links">
+                        <li><a href="calander.html">Calendar</a></li>
+                        <li><a href="drivers.html">Drivers</a></li>
+                        <li><a href="teams.html">Teams</a></li>
+                        <li><a href="chat.html">Chat</a></li>
+                        <li><a href="subscription.html">Subscription</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </nav>
+            </header>
+        );
+
+        // Footer Component
+        const Footer = () => (
+            <footer>
+                <div className="footer-content">
+                    <p>&copy; 2024 TrackSide. All Rights Reserved.</p>
+                    <ul className="footer-links">
+                        <li><a href="../pages/extras/privacypolicy.html">Privacy Policy</a></li>
+                        <li><a href="../pages/extras/terms.html">Terms of Use</a></li>
+                        <li><a href="../pages/extras/contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </footer>
+        );
+
+        // App Component to combine everything
+        const App = () => (
+            <div>
+                <Navbar />
+                <CalendarPage />
+                <Footer />
+            </div>
+        );
+
+        // Render the App component to the root element
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+</body>
+</html>
