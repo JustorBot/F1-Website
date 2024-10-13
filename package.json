@@ -1,0 +1,22 @@
+{
+  "name": "f1-website",
+  "version": "1.0.0",
+  "description": "A website for Motorsports",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JustorBot/F1-Website.git"
+  },
+  "author": "Justin Ferreira",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JustorBot/F1-Website/issues"
+  },
+  "homepage": "https://github.com/JustorBot/F1-Website#readme",
+  "dependencies": {
+    "express": "^4.21.1"
+  }
+}
