@@ -1,0 +1,6 @@
+{
+    "watch": ["*", "public/", "pages/", "images/", "css/", "js/"],
+    "ext": "js,html,css,md,avif,png",
+    "ignore": ["node_modules"]
+  }
+  
