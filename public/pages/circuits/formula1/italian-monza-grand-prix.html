@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>TrackSide | F1 Italian Grand Prix</title>
+    <link rel="stylesheet" href="../../../css/styles.css">
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        // Navbar Component
+        const Navbar = () => (
+            <header>
+                <nav className="navbar">
+                    <div className="logo">
+                        <a href="../../index.html"><h1>TrackSide</h1></a>
+                    </div>
+                    <ul className="nav-links">
+                        <li><a href="../../calendar.html">Calendar</a></li>
+                        <li><a href="../../drivers.html">Drivers</a></li>
+                        <li><a href="../../teams.html">Teams</a></li>
+                        <li><a href="../../chat.html">Chat</a></li>
+                        <li><a href="../../subscription.html">Subscription</a></li>
+                        <li><a href="../../about.html">About</a></li>
+                    </ul>
+                </nav>
+            </header>
+        );
+
+        // Current Year Stats Component
+        const CurrentYearStats = () => {
+            const [activeSession, setActiveSession] = React.useState('FP1'); // State to track active session
+
+            // Session data (mock data, replace with real data)
+            const sessionData = {
+                FP1: [
+                    { position: 1, driver: "Charles Leclerc", team: "Ferrari", time: "1:21.123" },
+                    { position: 2, driver: "Max Verstappen", team: "Red Bull Racing", time: "1:21.456" },
+                    { position: 3, driver: "Lewis Hamilton", team: "Mercedes", time: "1:21.890" },
+                ],
+                FP2: [
+                    { position: 1, driver: "Max Verstappen", team: "Red Bull Racing", time: "1:20.789" },
+                    { position: 2, driver: "Charles Leclerc", team: "Ferrari", time: "1:20.890" },
+                    { position: 3, driver: "Lando Norris", team: "McLaren", time: "1:21.123" },
+                ],
+                FP3: [
+                    { position: 1, driver: "Charles Leclerc", team: "Ferrari", time: "1:20.567" },
+                    { position: 2, driver: "Max Verstappen", team: "Red Bull Racing", time: "1:20.678" },
+                    { position: 3, driver: "Carlos Sainz", team: "Ferrari", time: "1:20.890" },
+                ],
+                Qualifying: [
+                    { position: 1, driver: "Charles Leclerc", team: "Ferrari", time: "1:19.456" },
+                    { position: 2, driver: "Max Verstappen", team: "Red Bull Racing", time: "1:19.890" },
+                    { position: 3, driver: "Lewis Hamilton", team: "Mercedes", time: "1:20.123" },
+                ],
+                Race: [
+                    { position: 1, driver: "Charles Leclerc", team: "Ferrari", time: "1:31:15.123" },
+                    { position: 2, driver: "Lewis Hamilton", team: "Mercedes", time: "1:31:20.456" },
+                    { position: 3, driver: "Max Verstappen", team: "Red Bull Racing", time: "1:31:25.890" },
+                ]
+            };
+
+            // Function to render the session table
+            const renderSessionTable = (session) => (
+                <table className="session-table">
+                    <thead>
+                        <tr>
+                            <th>Position</th>
+                            <th>Driver</th>
+                            <th>Team</th>
+                            <th>Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {sessionData[session].map((data, index) => (
+                            <tr key={index}>
+                                <td>{data.position}</td>
+                                <td>{data.driver}</td>
+                                <td>{data.team}</td>
+                                <td>{data.time}</td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            );
+
+            return (
+                <section className="current-year-stats">
+                    <h2>Current Year Stats</h2>
+                    <div className="session-buttons">
+                        <button 
+                            className={activeSession === 'FP1' ? 'active' : ''} 
+                            onClick={() => setActiveSession('FP1')}
+                        >
+                            FP1
+                        </button>
+                        <button 
+                            className={activeSession === 'FP2' ? 'active' : ''} 
+                            onClick={() => setActiveSession('FP2')}
+                        >
+                            FP2
+                        </button>
+                        <button 
+                            className={activeSession === 'FP3' ? 'active' : ''} 
+                            onClick={() => setActiveSession('FP3')}
+                        >
+                            FP3
+                        </button>
+                        <button 
+                            className={activeSession === 'Qualifying' ? 'active' : ''} 
+                            onClick={() => setActiveSession('Qualifying')}
+                        >
+                            Qualifying
+                        </button>
+                        <button 
+                            className={activeSession === 'Race' ? 'active' : ''} 
+                            onClick={() => setActiveSession('Race')}
+                        >
+                            Race
+                        </button>
+                    </div>
+                    <div className="session-data">
+                        {renderSessionTable(activeSession)}
+                    </div>
+                </section>
+            );
+        };
+
+        // Main content: Track-Specific Information
+        const CircuitDetails = () => (
+            <section className="circuit-details">
+                <div className="circuit-header">
+                    <h1>Italian Grand Prix</h1>
+                    <p className="circuit-location"><strong>Location:</strong> Monza, Italy</p>
+                    <img src="../../../images/circuits/Italy_Circuit.avif" alt="Monza Circuit Map" className="circuit-map" />
+                </div>
+
+                <div className="circuit-info">
+                    <h2>Track Information</h2>
+                    <ul>
+                        <li><strong>Track Length:</strong> 5.793 km</li>
+                        <li><strong>Number of Laps:</strong> 53</li>
+                        <li><strong>Total Distance:</strong> 306.720 km</li>
+                        <li><strong>Lap Record:</strong> 1:21.046 - Lewis Hamilton (2020)</li>
+                    </ul>
+                    <p>
+                        The Italian Grand Prix at Monza is one of the most historic races in Formula 1, known for its high-speed straights and passionate fans. The circuit's unique layout features a combination of tight chicanes and long straights, making it a favorite among drivers.
+                    </p>
+                </div>
+
+                <CurrentYearStats />
+
+                <div className="race-history">
+                    <h2>Recent Race Winners</h2>
+                    <table className="race-history-table">
+                        <thead>
+                            <tr>
+                                <th>Year</th>
+                                <th>Winner</th>
+                                <th>Team</th>
+                                <th>Time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2023</td>
+                                <td>Charles Leclerc</td>
+                                <td>Ferrari</td>
+                                <td>1:31:15.123</td>
+                            </tr>
+                            <tr>
+                                <td>2022</td>
+                                <td>Max Verstappen</td>
+                                <td>Red Bull Racing</td>
+                                <td>1:31:10.456</td>
+                            </tr>
+                            <tr>
+                                <td>2021</td>
+                                <td>Daniel Ricciardo</td>
+                                <td>McLaren</td>
+                                <td>1:31:11.890</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div className="media-gallery">
+                    <h2>Gallery</h2>
+                    <div className="gallery-grid">
+                        <img src="../../../images/races/monza-2023-1.jpg" alt="Monza 2023 Race 1" />
+                        <img src="../../../images/races/monza-2023-2.jpg" alt="Monza 2023 Race 2" />
+                        <img src="../../../images/races/monza-2022.jpg" alt="Monza 2022 Race" />
+                        <img src="../../../images/races/monza-2021.jpg" alt="Monza 2021 Race" />
+                    </div>
+                </div>
+            </section>
+        );
+
+        // Footer Component
+        const Footer = () => (
+            <footer>
+                <div className="footer-content">
+                    <p>&copy; 2024 TrackSide. All Rights Reserved.</p>
+                    <ul className="footer-links">
+                        <li><a href="../../extras/privacypolicy.html">Privacy Policy</a></li>
+                        <li><a href="../../extras/terms.html">Terms of Use</a></li>
+                        <li><a href="../../extras/contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </footer>
+        );
+
+        // App Component to combine everything
+        const App = () => (
+            <div>
+                <Navbar />
+                <CircuitDetails />
+                <Footer />
+            </div>
+        );
+
+        // Render the App component to the root element
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+</body>
+</html>

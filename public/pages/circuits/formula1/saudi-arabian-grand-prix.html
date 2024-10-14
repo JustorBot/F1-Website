@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>TrackSide | F1 SPA Circuit</title>
+    <title>TrackSide | F1 Saudi Arabian Circuit</title>
     <link rel="stylesheet" href="../../../css/styles.css">
     <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
@@ -34,41 +34,35 @@
         );
 
         // Current Year Stats Component
-        // Current Year Stats Component
         const CurrentYearStats = () => {
         const [activeSession, setActiveSession] = React.useState('FP1'); // State to track active session
 
         // Session data (mock data, replace with real data)
         const sessionData = {
             FP1: [
-                { position: 1, driver: "Max Verstappen", team: "Red Bull Racing", time: "1:45.123" },
-                { position: 2, driver: "Charles Leclerc", team: "Ferrari", time: "1:45.567" },
-                { position: 3, driver: "Lewis Hamilton", team: "Mercedes", time: "1:45.890" },
+                { position: 1, driver: "Max Verstappen", team: "Red Bull Racing", time: "1:29.123" },
+                { position: 2, driver: "Charles Leclerc", team: "Ferrari", time: "1:29.567" },
+                { position: 3, driver: "Lewis Hamilton", team: "Mercedes", time: "1:29.890" },
             ],
             FP2: [
-                { position: 1, driver: "Lewis Hamilton", team: "Mercedes", time: "1:44.456" },
-                { position: 2, driver: "Max Verstappen", team: "Red Bull Racing", time: "1:44.789" },
-                { position: 3, driver: "Lando Norris", team: "McLaren", time: "1:45.123" },
+                { position: 1, driver: "Lewis Hamilton", team: "Mercedes", time: "1:28.456" },
+                { position: 2, driver: "Max Verstappen", team: "Red Bull Racing", time: "1:28.789" },
+                { position: 3, driver: "Sergio Perez", team: "Red Bull Racing", time: "1:29.123" },
             ],
             FP3: [
-                { position: 1, driver: "Sergio Perez", team: "Red Bull Racing", time: "1:44.876" },
-                { position: 2, driver: "Lewis Hamilton", team: "Mercedes", time: "1:45.002" },
-                { position: 3, driver: "Carlos Sainz", team: "Ferrari", time: "1:45.345" },
+                { position: 1, driver: "Sergio Perez", team: "Red Bull Racing", time: "1:28.876" },
+                { position: 2, driver: "Lewis Hamilton", team: "Mercedes", time: "1:29.002" },
+                { position: 3, driver: "Carlos Sainz", team: "Ferrari", time: "1:29.345" },
             ],
-            // Sprint: [
-            //     { position: 1, driver: "", team: "", time: "" },
-            //     { position: 2, driver: "", team: "", time: "" },
-            //     { position: 3, driver: "", team: "", time: "" },
-            // ],
             Qualifying: [
-                { position: 1, driver: "Charles Leclerc", team: "Ferrari", time: "1:43.789" },
-                { position: 2, driver: "Max Verstappen", team: "Red Bull Racing", time: "1:44.002" },
-                { position: 3, driver: "Lewis Hamilton", team: "Mercedes", time: "1:44.123" },
+                { position: 1, driver: "Max Verstappen", team: "Red Bull Racing", time: "1:27.789" },
+                { position: 2, driver: "Charles Leclerc", team: "Ferrari", time: "1:28.002" },
+                { position: 3, driver: "Lewis Hamilton", team: "Mercedes", time: "1:28.123" },
             ],
             Race: [
-                { position: 1, driver: "Max Verstappen", team: "Red Bull Racing", time: "1:24:57.154" },
-                { position: 2, driver: "Lewis Hamilton", team: "Mercedes", time: "1:25:03.456" },
-                { position: 3, driver: "Charles Leclerc", team: "Ferrari", time: "1:25:13.678" },
+                { position: 1, driver: "Max Verstappen", team: "Red Bull Racing", time: "1:33:57.154" },
+                { position: 2, driver: "Lewis Hamilton", team: "Mercedes", time: "1:34:03.456" },
+                { position: 3, driver: "Charles Leclerc", team: "Ferrari", time: "1:34:13.678" },
             ]
         };
 
@@ -118,14 +112,6 @@
                     >
                         FP3
                     </button>
-                    {/* 
-                        <button 
-                            className={activeSession === 'Sprint' ? 'active' : ''} 
-                            onClick={() => setActiveSession('Sprint')}
-                        >
-                            Sprint
-                        </button> 
-                        */}
                     <button 
                         className={activeSession === 'Qualifying' ? 'active' : ''} 
                         onClick={() => setActiveSession('Qualifying')}
@@ -150,21 +136,21 @@
         const CircuitDetails = () => (
             <section className="circuit-details">
                 <div className="circuit-header">
-                    <h1>Spa-Francorchamps Circuit</h1>
-                    <p className="circuit-location"><strong>Location:</strong> Spa, Belgium</p>
-                    <img src="../../../images/circuits/Belgium_Circuit.png" alt="Spa Circuit Map" className="circuit-map" />
+                    <h1>Jeddah Corniche Circuit</h1>
+                    <p className="circuit-location"><strong>Location:</strong> Jeddah, Saudi Arabia</p>
+                    <img src="../../../images/circuits/Saudi_Arabia_Circuit.avif" alt="Jeddah Corniche Circuit Map" className="circuit-map" />
                 </div>
 
                 <div className="circuit-info">
                     <h2>Track Information</h2>
                     <ul>
-                        <li><strong>Track Length:</strong> 7.004 km</li>
-                        <li><strong>Number of Laps:</strong> 44</li>
-                        <li><strong>Total Distance:</strong> 308.052 km</li>
-                        <li><strong>Lap Record:</strong> 1:46.286 - Valtteri Bottas (2018)</li>
+                        <li><strong>Track Length:</strong> 6.174 km</li>
+                        <li><strong>Number of Laps:</strong> 50</li>
+                        <li><strong>Total Distance:</strong> 308.450 km</li>
+                        <li><strong>Lap Record:</strong> 1:30.734 - Lewis Hamilton (2021)</li>
                     </ul>
                     <p>
-                        The Spa-Francorchamps circuit is one of the most famous and challenging circuits in Formula 1. Known for its fast, sweeping corners like Eau Rouge and the unpredictable weather, it provides a unique test for drivers. 
+                        The Jeddah Corniche Circuit is known for being the fastest street circuit in Formula 1, with drivers hitting high speeds while racing between walls. Its unique layout along the Red Sea makes it one of the most scenic circuits on the calendar.
                     </p>
                 </div>
 
@@ -186,19 +172,19 @@
                                 <td>2023</td>
                                 <td>Max Verstappen</td>
                                 <td>Red Bull Racing</td>
-                                <td>1:24:57.154</td>
+                                <td>1:33:57.154</td>
                             </tr>
                             <tr>
                                 <td>2022</td>
                                 <td>Charles Leclerc</td>
                                 <td>Ferrari</td>
-                                <td>1:25:03.456</td>
+                                <td>1:34:03.456</td>
                             </tr>
                             <tr>
                                 <td>2021</td>
                                 <td>Lewis Hamilton</td>
                                 <td>Mercedes</td>
-                                <td>1:26:13.678</td>
+                                <td>1:34:13.678</td>
                             </tr>
                         </tbody>
                     </table>
@@ -207,10 +193,10 @@
                 <div className="media-gallery">
                     <h2>Gallery</h2>
                     <div className="gallery-grid">
-                        <img src="../../../images/races/spa-2023-1.jpg" alt="Spa 2023 Race 1" />
-                        <img src="../../../images/races/spa-2023-2.jpg" alt="Spa 2023 Race 2" />
-                        <img src="../../../images/races/spa-2022.jpg" alt="Spa 2022 Race" />
-                        <img src="../../../images/races/spa-2021.jpg" alt="Spa 2021 Race" />
+                        <img src="../../../images/races/jeddah-2023-1.jpg" alt="Jeddah 2023 Race 1" />
+                        <img src="../../../images/races/jeddah-2023-2.jpg" alt="Jeddah 2023 Race 2" />
+                        <img src="../../../images/races/jeddah-2022.jpg" alt="Jeddah 2022 Race" />
+                        <img src="../../../images/races/jeddah-2021.jpg" alt="Jeddah 2021 Race" />
                     </div>
                 </div>
             </section>
