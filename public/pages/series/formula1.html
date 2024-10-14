@@ -153,7 +153,7 @@
                 location: "Spa, Belgium",
                 trackImage: "../../images/circuits/Belgium_Circuit.png",
                 status: "done",
-                top3: ["Leis Hamilton", "Oscar Piastri", "Charles Leclerc"]
+                top3: ["Lewis Hamilton", "Oscar Piastri", "Charles Leclerc"]
             },
             {
                 id: 15,
@@ -264,21 +264,30 @@
         );
 
         // Component to display individual race details
-        const RaceCard = ({ race }) => (
-            <div className={`race-card ${race.status}`}>
-                <h3>{race.name}</h3>
-                <img src={race.trackImage} alt={`${race.name} track`} className="track-image"/>
-                <p><strong>Date:</strong> {race.date}</p>
-                <p><strong>Time:</strong> {race.time}</p>
-                <p><strong>Location:</strong> {race.location}</p>
-                
-                {race.status === "done" ? (
-                    <Top3Results top3={race.top3} />
-                ) : (
-                    <p className="upcoming-race">Upcoming Race</p>
-                )}
-            </div>
-        );
+        const RaceCard = ({ race }) => {
+            // Create a URL-friendly version of the race name for linking
+            const raceLink = race.name.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '') + ".html";
+
+            return (
+                <div className={`race-card ${race.status}`}>
+                    <h3>
+                        <a href={`../circuits/formula1/${raceLink}`}>{race.name}</a>
+                    </h3>
+                    <img src={race.trackImage} alt={`${race.name} track`} className="track-image"/>
+                    <p><strong>Date:</strong> {race.date}</p>
+                    <p><strong>Time:</strong> {race.time}</p>
+                    <p><strong>Location:</strong> {race.location}</p>
+                    
+                    {race.status === "done" ? (
+                        <Top3Results top3={race.top3} />
+                    ) : (
+                        <p className="upcoming-race">Upcoming Race</p>
+                    )}
+                    
+                    <a href={`../circuits/formula1/${raceLink}`} className="view-details-link">View Details</a>
+                </div>
+            );
+        };
 
         // Component to display the next race at the top
         const NextRace = ({ race }) => (
@@ -316,15 +325,15 @@
             <header>
                 <nav className="navbar">
                     <div className="logo">
-                        <a href="../index.html"><h1>TrackSide</h1></a>
+                        <a href="../../../index.html"><h1>TrackSide</h1></a>
                     </div>
                     <ul className="nav-links">
-                        <li><a href="calander.html">Calendar</a></li>
-                        <li><a href="drivers.html">Drivers</a></li>
-                        <li><a href="teams.html">Teams</a></li>
-                        <li><a href="chat.html">Chat</a></li>
-                        <li><a href="subscription.html">Subscription</a></li>
-                        <li><a href="about.html">About</a></li>
+                        <li><a href="../calander.html">Calendar</a></li>
+                        <li><a href="../drivers.html">Drivers</a></li>
+                        <li><a href="../teams.html">Teams</a></li>
+                        <li><a href="../chat.html">Chat</a></li>
+                        <li><a href="../subscription.html">Subscription</a></li>
+                        <li><a href="../about.html">About</a></li>
                     </ul>
                 </nav>
             </header>
@@ -336,9 +345,9 @@
                 <div className="footer-content">
                     <p>&copy; 2024 TrackSide. All Rights Reserved.</p>
                     <ul className="footer-links">
-                        <li><a href="../pages/extras/privacypolicy.html">Privacy Policy</a></li>
-                        <li><a href="../pages/extras/terms.html">Terms of Use</a></li>
-                        <li><a href="../pages/extras/contact.html">Contact Us</a></li>
+                        <li><a href="../extras/privacypolicy.html">Privacy Policy</a></li>
+                        <li><a href="../extras/terms.html">Terms of Use</a></li>
+                        <li><a href="../extras/contact.html">Contact Us</a></li>
                     </ul>
                 </div>
             </footer>
